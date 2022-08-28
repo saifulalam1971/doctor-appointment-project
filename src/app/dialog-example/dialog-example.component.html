@@ -1,0 +1,64 @@
+<h2>Create Appointment</h2>
+<div class="container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+ 
+        <p>
+          <label for="firstname">First Name </label><br>
+          <input class="input-bottom-border" type="text" id="firstname" name="firstname" formControlName="firstname">
+         
+        </p>
+       
+        <p>
+          <label for="lastname">Last Name </label><br>
+          <input class="input-bottom-border" type="text" id="lastname" name="lastname" formControlName="lastname">
+        </p>
+       
+        <p>
+          <label for="email">Email Address </label><br>
+          <input class="input-bottom-border" type="text" id="email" name="email" formControlName="email">
+        </p>
+
+        <p>
+          <label for="email">Age </label><br>
+          <input class="input-bottom-border" type="" id="age" name="" formControlName="age">
+        </p>
+       
+        <p>
+          <span class="gender"> Geneder </span>
+          <mat-radio-group aria-label="Geneder" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+          </mat-radio-group>
+        </p>
+
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Appointment Date</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="">
+              <input matEndDate placeholder="">
+            </mat-date-range-input>
+            <mat-hint></mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <form [formGroup]="form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Appointment Time</mat-label>
+              <input formControlName="time" matTimepicker>
+            </mat-form-field>
+          </form>
+        </div>
+       
+       
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+          <button mat-raised-button mat-dialog-close color="primary">Save</button>
+          <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+        </div>
+       
+       
+      </form>
+</div>

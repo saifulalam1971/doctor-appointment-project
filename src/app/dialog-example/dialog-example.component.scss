@@ -1,0 +1,16 @@
+.container{
+    width: 600px;
+    height: 500px;
+}
+input{
+    outline: none;
+    outline-style: none;
+    border: none;
+    width: 90%;
+}
+mat-form-field{
+    width: 90%;
+}
+.input-bottom-border{
+      border-bottom: 1px solid gray;
+}
